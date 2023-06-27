@@ -1,10 +1,17 @@
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
+import Technology from "./pages/Technology";
 
 const App = () => {
   return (
-    <div>
-      <Crew />
-    </div>
+    <>
+      <Header />
+      <main>
+        <Home />
+      </main>
+    </>
   );
 };
 
