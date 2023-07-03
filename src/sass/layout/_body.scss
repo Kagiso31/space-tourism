@@ -1,0 +1,51 @@
+@use "../abstracts/mixins" as m;
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  inset: 0;
+
+  &.home-page {
+    background-image: url(./assets/home/background-home-mobile.jpg);
+
+    @include m.breakpoint(medium) {
+      background-image: url(./assets/home/background-home-tablet.jpg);
+    }
+    @include m.breakpoint(large) {
+      background-image: url(./assets/home/background-home-desktop.jpg);
+    }
+  }
+
+  //   &.destination-page {
+  //     background-image: url(../../assets/destination/background-destination-mobile.jpg);
+
+  //     @include m.breakpoint(medium) {
+  //       background-image: url(../../assets/destination/background-destination-tablet.jpg);
+  //     }
+  //     @include m.breakpoint(large) {
+  //       background-image: url(../../assets/destination/background-destination-desktop.jpg);
+  //     }
+  //   }
+
+  //   &.crew-page {
+  //     background-image: url(../../assets/crew/background-crew-mobile.jpg);
+
+  //     @include m.breakpoint(medium) {
+  //       background-image: url(../../assets/crew/background-crew-tablet.jpg);
+  //     }
+  //     @include m.breakpoint(large) {
+  //       background-image: url(../../assets/crew/background-crew-desktop.jpg);
+  //     }
+  //   }
+
+  //   &.technology-page {
+  //     background-image: url(../../assets/technology/background-technology-mobile.jpg);
+
+  //     @include m.breakpoint(medium) {
+  //       background-image: url(../../assets/technology/background-technology-tablet.jpg);
+  //     }
+  //     @include m.breakpoint(large) {
+  //       background-image: url(../../assets/technology/background-technology-desktop.jpg);
+  //     }
+  //   }
+}

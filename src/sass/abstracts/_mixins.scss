@@ -14,7 +14,7 @@
 
 @mixin breakpoint($keys...) {
   @each $key in $keys {
-    @if ($key == "small-only") {
+    @if ($key == "small-only" or $key == "xsmall") {
       @media (max-width: map-get(b.$breakpoints, $key)) {
         @content;
       }

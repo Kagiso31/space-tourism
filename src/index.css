@@ -1,7 +1,7 @@
 :root {
   color-scheme: dark;
-  --clr-primary: #0c0e18;
-  --clr-neutral: #d2d8f9;
+  --clr-primary: #0b0d17;
+  --clr-neutral: #d0d6f9;
   --clr-secondary: #ffffff;
   --fw-regular: 400;
   --fw-bold: 700;
@@ -67,6 +67,12 @@ picture {
 input,
 button {
   font: inherit;
+  padding: 0;
+  border: none;
+}
+
+#root {
+  isolation: isolate;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -91,6 +97,12 @@ body {
   font-family: "Bellefair", serif;
 }
 
+h1,
+h2,
+h3 {
+  font-family: "Bellefair", serif;
+}
+
 .mobile-nav-toggle {
   cursor: pointer;
   z-index: 1;
@@ -105,7 +117,17 @@ body {
 }
 
 .primary-header {
-  padding-top: 1.5rem;
+  padding-block: 1.5rem;
+}
+@media (min-width: 40em) {
+  .primary-header {
+    margin-left: 2.4375rem;
+  }
+}
+@media (min-width: 64em) {
+  .primary-header {
+    margin-left: 3.4375rem;
+  }
 }
 .primary-header__container {
   display: flex;
@@ -117,7 +139,6 @@ body {
   position: relative;
   background-color: rgba(var(--clr-primary), 0.4);
   backdrop-filter: blur(2.548125rem);
-  outline: 1px solid white;
 }
 @media (min-width: 40em) {
   .nav {
@@ -233,6 +254,25 @@ body {
   }
 }
 
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  inset: 0;
+}
+body.home-page {
+  background-image: url(./assets/home/background-home-mobile.jpg);
+}
+@media (min-width: 40em) {
+  body.home-page {
+    background-image: url(./assets/home/background-home-tablet.jpg);
+  }
+}
+@media (min-width: 64em) {
+  body.home-page {
+    background-image: url(./assets/home/background-home-desktop.jpg);
+  }
+}
+
 @media (max-width: 39.99875em) {
   .wrapper {
     width: min(100% - 3rem, 90rem);
@@ -250,6 +290,129 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line */
   border: 0;
+}
+
+.home {
+  text-align: center;
+}
+@media (min-width: 40em) {
+  .home {
+    padding-top: 6.25rem;
+  }
+}
+@media (min-width: 64em) {
+  .home {
+    text-align: left;
+  }
+}
+.home__title {
+  margin-block: 1rem;
+  color: var(--clr-secondary);
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+@media (min-width: 40em) {
+  .home__title {
+    font-size: 9.375rem;
+  }
+}
+.home__subtitle {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--clr-neutral);
+  font-family: "Barlow Condensed";
+  font-size: 1rem;
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+@media (min-width: 40em) {
+  .home__subtitle {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 64em) {
+  .home__subtitle {
+    font-size: 1.75rem;
+  }
+}
+.home__body {
+  max-width: 42ch;
+  margin-inline: auto;
+  color: var(--clr-neutral);
+  font-family: "Barlow";
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+@media (min-width: 40em) {
+  .home__body {
+    max-width: 52ch;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 64em) {
+  .home__body {
+    max-width: 48ch;
+    margin-inline: 0;
+    font-size: 1.125rem;
+  }
+}
+.home__button {
+  color: var(--clr-primary);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.078125rem;
+  width: 9.375rem;
+  aspect-ratio: 1;
+  margin-top: 5rem;
+  background-color: var(--clr-secondary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+@media (max-width: 23.125em) {
+  .home__button {
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 40em) {
+  .home__button {
+    font-size: 2rem;
+    letter-spacing: 0.125rem;
+    width: 15.125rem;
+    aspect-ratio: 1;
+  }
+}
+@media (min-width: 64em) {
+  .home__button {
+    width: 17.125rem;
+    aspect-ratio: 1;
+  }
+}
+.home__button:hover, .home__button:focus-visible {
+  outline: transparent;
+  animation: pulse 1s forwards;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 5.5rem rgba(255, 255, 255, 0.1);
+  }
+}
+.home .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 64em) {
+  .home .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: end;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

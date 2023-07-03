@@ -2,7 +2,14 @@
 @use "../abstracts/functions" as f;
 
 .primary-header {
-  padding-top: f.rem(24);
+  padding-block: f.rem(24);
+
+  @include m.breakpoint(medium) {
+    margin-left: f.rem(39);
+  }
+  @include m.breakpoint(large) {
+    margin-left: f.rem(55);
+  }
 
   &__container {
     display: flex;
