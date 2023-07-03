@@ -1,0 +1,27 @@
+@use "./breakpoints" as b;
+
+// @mixin breakpoint($size) {
+//   @if not($size == "small-only") {
+//     @media (min-width: map-get(b.$breakpoints, $size)) {
+//       @content;
+//     }
+//   } @else {
+//     @media (max-width: map-get(b.$breakpoints, $size)) {
+//       @content;
+//     }
+//   }
+// }
+
+@mixin breakpoint($keys...) {
+  @each $key in $keys {
+    @if ($key == "small-only") {
+      @media (max-width: map-get(b.$breakpoints, $key)) {
+        @content;
+      }
+    } @else {
+      @media (min-width: map-get(b.$breakpoints, $key)) {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+// padding between bottom of nav link and edge of nav container for underline
+$padding-bottom: f.rem(40);
+
+.nav {
+  position: relative;
+  background-color: rgba(var(--clr-primary), 0.4);
+  backdrop-filter: blur(f.rem(40.77));
+  outline: 1px solid white; // REMOVE
+
+  @include m.breakpoint(medium) {
+    padding-top: f.rem(40);
+    padding-inline: f.rem(48);
+    padding-bottom: $padding-bottom;
+  }
+  @include m.breakpoint(large) {
+    padding-inline: f.rem(160);
+  }
+
+  @include m.breakpoint(small-only) {
+    position: absolute;
+    inset: 0;
+    left: 100%;
+    transition: 0.5s;
+    opacity: 0;
+    overflow-x: hidden;
+
+    &[data-visible="true"] {
+      left: 33%;
+      opacity: 1;
+    }
+  }
+
+  &__list {
+    counter-reset: counter;
+    display: flex;
+
+    @include m.breakpoint(small-only) {
+      flex-direction: column;
+      gap: f.rem(32);
+      height: 100%;
+      padding-top: f.rem(118);
+      padding-left: f.rem(32);
+    }
+
+    @include m.breakpoint(medium) {
+      align-items: center;
+      justify-content: space-between;
+      gap: f.rem(38);
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    @include m.breakpoint(small-only, large) {
+      &:first-of-type {
+        counter-set: counter 0;
+      }
+      counter-increment: counter;
+    }
+  }
+
+  &__link {
+    font-size: f.rem(14);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: f.rem(2.7);
+    color: var(--clr-secondary);
+
+    @include m.breakpoint(medium) {
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: calc($padding-bottom * -1);
+        height: f.rem(3);
+        width: 100%;
+        background-color: var(--clr-secondary);
+        transition: opacity 200ms ease-in-out;
+        opacity: 0;
+      }
+
+      &:hover::after {
+        opacity: 0.5;
+      }
+
+      &.active::after {
+        opacity: 1;
+      }
+    }
+
+    @include m.breakpoint(small-only, large) {
+      display: flex;
+      gap: f.rem(12);
+      font-size: f.rem(16);
+
+      &::before {
+        content: counter(counter, decimal-leading-zero);
+        font-weight: var(--fw-bold);
+      }
+    }
+  }
+}

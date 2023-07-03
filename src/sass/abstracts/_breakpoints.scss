@@ -1,0 +1,15 @@
+@use "./functions" as f;
+
+// $breakpoints: (
+//   "small-only": f.em(639.98),
+//   "small": f.em(640),
+//   "medium": f.em(768),
+//   "large": f.em(1024),
+//   "xlarge": f.em(1440),
+// );
+$breakpoints: (
+  "small-only": f.em(639.98),
+  "medium": f.em(640),
+  "large": f.em(1024),
+  "xlarge": f.em(1400),
+);

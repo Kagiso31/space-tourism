@@ -1,27 +1,29 @@
-const Navigation = () => {
+import { NavLink } from "react-router-dom";
+
+const Navigation = ({ expanded }) => {
   return (
     <>
-      <nav className="nav" id="navigation">
+      <nav className="nav" id="navigation" data-visible={expanded}>
         <ul role="list" className="nav__list">
           <li className="nav__item">
-            <a className="nav__link" href="#">
+            <NavLink to="/" className="nav__link" href="#">
               Home
-            </a>
+            </NavLink>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="#">
+            <NavLink to="/destination" className="nav__link" href="#">
               Destination
-            </a>
+            </NavLink>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="#">
+            <NavLink to="/crew" className="nav__link" href="#">
               Crew
-            </a>
+            </NavLink>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="#">
+            <NavLink to="/technology" className="nav__link" href="#">
               Technology
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>

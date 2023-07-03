@@ -1,0 +1,12 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+
+.primary-header {
+  padding-top: f.rem(24);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

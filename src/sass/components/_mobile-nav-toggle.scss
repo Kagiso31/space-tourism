@@ -1,0 +1,14 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.mobile-nav-toggle {
+  cursor: pointer;
+  z-index: 1;
+  background: transparent;
+  border: transparent;
+  padding: f.rem(10);
+
+  @include m.breakpoint(medium) {
+    display: none;
+  }
+}

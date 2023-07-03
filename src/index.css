@@ -1,3 +1,255 @@
+:root {
+  color-scheme: dark;
+  --clr-primary: #0c0e18;
+  --clr-neutral: #d2d8f9;
+  --clr-secondary: #ffffff;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
 
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*
+font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Bellefair', serif;
+*/
+body {
+  font-family: "Bellefair", serif;
+}
+
+.mobile-nav-toggle {
+  cursor: pointer;
+  z-index: 1;
+  background: transparent;
+  border: transparent;
+  padding: 0.625rem;
+}
+@media (min-width: 40em) {
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
+
+.primary-header {
+  padding-top: 1.5rem;
+}
+.primary-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  position: relative;
+  background-color: rgba(var(--clr-primary), 0.4);
+  backdrop-filter: blur(2.548125rem);
+  outline: 1px solid white;
+}
+@media (min-width: 40em) {
+  .nav {
+    padding-top: 2.5rem;
+    padding-inline: 3rem;
+    padding-bottom: 2.5rem;
+  }
+}
+@media (min-width: 64em) {
+  .nav {
+    padding-inline: 10rem;
+  }
+}
+@media (max-width: 39.99875em) {
+  .nav {
+    position: absolute;
+    inset: 0;
+    left: 100%;
+    transition: 0.5s;
+    opacity: 0;
+    overflow-x: hidden;
+  }
+  .nav[data-visible=true] {
+    left: 33%;
+    opacity: 1;
+  }
+}
+.nav__list {
+  counter-reset: counter;
+  display: flex;
+}
+@media (max-width: 39.99875em) {
+  .nav__list {
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+    padding-top: 7.375rem;
+    padding-left: 2rem;
+  }
+}
+@media (min-width: 40em) {
+  .nav__list {
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.375rem;
+  }
+}
+.nav__item {
+  position: relative;
+}
+@media (max-width: 39.99875em) {
+  .nav__item {
+    counter-increment: counter;
+  }
+  .nav__item:first-of-type {
+    counter-set: counter 0;
+  }
+}
+@media (min-width: 64em) {
+  .nav__item {
+    counter-increment: counter;
+  }
+  .nav__item:first-of-type {
+    counter-set: counter 0;
+  }
+}
+.nav__link {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.16875rem;
+  color: var(--clr-secondary);
+}
+@media (min-width: 40em) {
+  .nav__link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: calc(2.5rem * -1);
+    height: 0.1875rem;
+    width: 100%;
+    background-color: var(--clr-secondary);
+    transition: opacity 200ms ease-in-out;
+    opacity: 0;
+  }
+  .nav__link:hover::after {
+    opacity: 0.5;
+  }
+  .nav__link.active::after {
+    opacity: 1;
+  }
+}
+@media (max-width: 39.99875em) {
+  .nav__link {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 1rem;
+  }
+  .nav__link::before {
+    content: counter(counter, decimal-leading-zero);
+    font-weight: var(--fw-bold);
+  }
+}
+@media (min-width: 64em) {
+  .nav__link {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 1rem;
+  }
+  .nav__link::before {
+    content: counter(counter, decimal-leading-zero);
+    font-weight: var(--fw-bold);
+  }
+}
+
+@media (max-width: 39.99875em) {
+  .wrapper {
+    width: min(100% - 3rem, 90rem);
+    margin-inline: auto;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
 
 /*# sourceMappingURL=index.css.map */

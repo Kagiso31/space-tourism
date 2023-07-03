@@ -2,34 +2,38 @@ import Navigation from "./Navigation";
 import logo from "../assets/shared/logo.svg";
 import hamburgerIcon from "../assets/shared/icon-hamburger.svg";
 import closeIcon from "../assets/shared/icon-close.svg";
+import { useState } from "react";
 
 const Header = () => {
-  const handleClick = (e) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const handleClick = (e, expanded) => {
     e.preventDefault();
+    setExpanded(!expanded);
   };
 
   return (
     <header className="primary-header">
-      <a href="#">
-        <img src={logo} alt="Logo" />
-      </a>
-      <button
-        className="mobile-nav-toggle"
-        aria-expanded="false"
-        aria-controls="navigation"
-        onClick={handleClick}
-      >
-        <img
-          className="icon-hamburger"
-          src={hamburgerIcon}
-          alt=""
-          aria-hidden="true"
-        />
-        <img className="icon-close" src={closeIcon} alt="" aria-hidden="true" />
-        <span className="visually-hidden">Menu</span>
-      </button>
-
-      <Navigation />
+      <div className="wrapper">
+        <div className="primary-header__container">
+          <img src={logo} alt="Logo" />
+          <button
+            className="mobile-nav-toggle"
+            aria-expanded="false"
+            aria-controls="navigation"
+            onClick={(e) => handleClick(e, expanded)}
+          >
+            <img
+              className={expanded ? "icon-close" : "icon-hamburger"}
+              src={expanded ? closeIcon : hamburgerIcon}
+              alt=""
+              aria-hidden="true"
+            />
+            <span className="visually-hidden">Menu</span>
+          </button>
+          <Navigation expanded={expanded} />
+        </div>
+      </div>
     </header>
   );
 };

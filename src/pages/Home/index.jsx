@@ -5,7 +5,7 @@ const Home = () => {
     <section>
       <div>
         <h1>
-          <span>So, you want to travel to </span>
+          <strong>So, you want to travel to</strong>
           Space
         </h1>
         <p>
