@@ -6,8 +6,9 @@ $padding-bottom: f.rem(40);
 
 .nav {
   position: relative;
-  background-color: rgba(var(--clr-primary), 0.4);
+  background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(f.rem(40.77));
+  z-index: 1;
 
   @include m.breakpoint(medium) {
     padding-top: f.rem(40);
@@ -15,7 +16,7 @@ $padding-bottom: f.rem(40);
     padding-bottom: $padding-bottom;
   }
   @include m.breakpoint(large) {
-    padding-inline: f.rem(160);
+    padding-inline: clamp(f.rem(112), 10vw, f.rem(160));
   }
 
   @include m.breakpoint(small-only) {

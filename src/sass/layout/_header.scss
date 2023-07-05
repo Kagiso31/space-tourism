@@ -6,8 +6,10 @@
 
   @include m.breakpoint(medium) {
     margin-left: f.rem(39);
+    padding-top: 0;
   }
   @include m.breakpoint(large) {
+    padding-top: f.rem(40);
     margin-left: f.rem(55);
   }
 

@@ -1,0 +1,210 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.destination {
+  $padding-bottom-sm: f.rem(8);
+  $padding-bottom-md: f.rem(12);
+
+  text-align: center;
+
+  @include m.breakpoint(large) {
+    text-align: left;
+    margin-top: f.rem(76);
+  }
+
+  &__title {
+    display: flex;
+    gap: f.rem(18);
+    margin-bottom: f.rem(32);
+    font-size: f.rem(16);
+    font-weight: var(--fw-regular);
+    text-transform: uppercase;
+    letter-spacing: f.rem(2.7);
+
+    @include m.breakpoint(small-only) {
+      justify-content: center;
+    }
+    @include m.breakpoint(medium) {
+      font-size: f.rem(20);
+      margin-left: f.rem(39);
+    }
+    @include m.breakpoint(large) {
+      font-size: f.rem(28);
+      margin-left: f.rem(100);
+    }
+
+    span {
+      color: var(--clr-secondary);
+      font-weight: var(--fw-bold);
+      opacity: 0.25;
+    }
+  }
+
+  &__tabs-container {
+    @include m.breakpoint(large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      justify-items: center;
+    }
+  }
+
+  &__img {
+    width: f.rem(170);
+    margin-inline: auto;
+    margin-bottom: f.rem(26);
+
+    @include m.breakpoint(medium) {
+      width: f.rem(300);
+    }
+    @include m.breakpoint(large) {
+      width: f.rem(450);
+      margin-bottom: 0;
+    }
+  }
+
+  [role="tablist"] {
+    display: flex;
+    gap: f.rem(27);
+    justify-content: center;
+    padding-bottom: $padding-bottom-sm;
+    margin-bottom: f.rem(20);
+    list-style: none;
+
+    @include m.breakpoint(medium) {
+      padding-bottom: $padding-bottom-md;
+    }
+    @include m.breakpoint(large) {
+      justify-content: start;
+    }
+
+    [role="presentation"] {
+      position: relative;
+    }
+
+    [role="tab"] {
+      color: var(--clr-neutral);
+      font-family: var(--ff-accent);
+      font-size: f.rem(14);
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: f.rem(2.362);
+
+      @include m.breakpoint(medium) {
+        font-size: f.rem(16);
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: calc($padding-bottom-sm * -1);
+        height: f.rem(3);
+        width: 100%;
+        background-color: var(--clr-secondary);
+        transition: opacity 200ms ease-in-out;
+        opacity: 0;
+
+        @include m.breakpoint(medium) {
+          bottom: calc($padding-bottom-md * -1);
+        }
+      }
+
+      &[aria-selected="true"] {
+        color: var(--clr-secondary);
+      }
+      &:hover::before {
+        opacity: 0.5;
+      }
+
+      &[aria-selected="true"]::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__name {
+    font-family: var(--ff-secondary);
+    font-size: f.rem(56);
+    text-transform: uppercase;
+
+    @include m.breakpoint(medium) {
+      font-size: f.rem(80);
+    }
+    @include m.breakpoint(large) {
+      font-size: f.rem(100);
+    }
+  }
+
+  &__description {
+    font-size: f.rem(15);
+    line-height: 1.7;
+    padding-bottom: f.rem(28);
+    border-bottom: 1px solid hsla(231, 15%, 26%, 1);
+    margin-bottom: f.rem(28);
+
+    @include m.breakpoint(medium) {
+      font-size: f.rem(16);
+      line-height: 1.75;
+    }
+    @include m.breakpoint(large) {
+      font-size: f.rem(18);
+      line-height: 1.78;
+      max-width: 44ch;
+      padding-bottom: f.rem(54);
+    }
+
+    &.wrapper {
+      @include m.breakpoint(medium) {
+        width: calc(100% - f.rem(196));
+        margin-inline: auto;
+      }
+      @include m.breakpoint(large) {
+        width: auto;
+        margin-inline: 0;
+      }
+    }
+  }
+
+  &__extra-info {
+    @include m.breakpoint(medium) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: f.rem(11);
+    }
+  }
+
+  &__distance {
+    margin-bottom: f.rem(24);
+
+    @include m.breakpoint(medium) {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      font-size: f.rem(14);
+      margin-bottom: f.rem(12);
+    }
+
+    &-value {
+      color: var(--clr-secondary);
+      font-family: var(--ff-secondary);
+      font-size: f.rem(28);
+      text-transform: uppercase;
+    }
+  }
+
+  &__travel {
+    &-title {
+      font-size: f.rem(14);
+      margin-bottom: f.rem(12);
+    }
+
+    &-value {
+      color: var(--clr-secondary);
+      font-family: var(--ff-secondary);
+      font-size: f.rem(28);
+      text-transform: uppercase;
+    }
+  }
+}

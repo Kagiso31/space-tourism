@@ -1,9 +1,15 @@
 @use "../abstracts/functions" as f;
 @use "../abstracts/mixins" as m;
 
+// .wrapper {
+//   @include m.breakpoint(small-only) {
+//     width: min(100% - f.rem(48), f.rem(1440));
+//     margin-inline: auto;
+//   }
+// }
 .wrapper {
   @include m.breakpoint(small-only) {
-    width: min(100% - f.rem(48), f.rem(1440));
+    width: calc(100% - f.rem(48));
     margin-inline: auto;
   }
 }

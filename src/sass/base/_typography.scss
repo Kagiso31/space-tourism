@@ -1,14 +1,23 @@
-/*
-font-family: 'Barlow Condensed', sans-serif;
-font-family: 'Bellefair', serif;
-*/
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
 
-body {
-  font-family: "Bellefair", serif;
+h1 {
+  font-family: var(--ff-accent);
 }
 
-h1,
-h2,
+h2 {
+  font-family: var(--ff-secondary);
+}
+
 h3 {
-  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral);
+  letter-spacing: f.rem(2.362);
+}
+
+p {
+  font-family: var(--ff-primary);
+  color: var(--clr-neutral);
 }
