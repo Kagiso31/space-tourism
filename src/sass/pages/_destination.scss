@@ -140,7 +140,7 @@
     font-size: f.rem(15);
     line-height: 1.7;
     padding-bottom: f.rem(28);
-    border-bottom: 1px solid hsla(231, 15%, 26%, 1);
+    border-bottom: 1px solid var(--clr-accent);
     margin-bottom: f.rem(28);
 
     @include m.breakpoint(medium) {

@@ -38,14 +38,14 @@ body {
     }
   }
 
-  //   &.technology-page {
-  //     background-image: url(./assets/technology/background-technology-mobile.jpg);
+  &.technology-page {
+    background-image: url(./assets/technology/background-technology-mobile.jpg);
 
-  //     @include m.breakpoint(medium) {
-  //       background-image: url(./assets/technology/background-technology-tablet.jpg);
-  //     }
-  //     @include m.breakpoint(large) {
-  //       background-image: url(./assets/technology/background-technology-desktop.jpg);
-  //     }
-  //   }
+    @include m.breakpoint(medium) {
+      background-image: url(./assets/technology/background-technology-tablet.jpg);
+    }
+    @include m.breakpoint(large) {
+      background-image: url(./assets/technology/background-technology-desktop.jpg);
+    }
+  }
 }
