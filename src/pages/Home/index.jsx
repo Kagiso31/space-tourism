@@ -11,7 +11,7 @@ const Home = () => {
     <section className="home">
       <div className="wrapper">
         <div className="home__text">
-          <h1>
+          <h1 className="home__heading">
             <strong className="home__subtitle">
               So, you want to travel to
             </strong>

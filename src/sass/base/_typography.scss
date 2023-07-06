@@ -1,12 +1,44 @@
 @use "../abstracts/functions" as f;
 @use "../abstracts/mixins" as m;
 
-h1 {
+h1:not(.home__heading) {
+  display: flex;
+  gap: f.rem(18);
+  margin-bottom: f.rem(32);
   font-family: var(--ff-accent);
+  font-size: f.rem(16);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  letter-spacing: f.rem(2.7);
+
+  @include m.breakpoint(small-only) {
+    justify-content: center;
+  }
+  @include m.breakpoint(medium) {
+    font-size: f.rem(20);
+    margin-left: f.rem(39);
+    margin-top: f.rem(40);
+  }
+  @include m.breakpoint(large) {
+    font-size: f.rem(28);
+    margin-left: f.rem(100);
+    margin-top: f.rem(76);
+  }
+
+  span {
+    color: var(--clr-secondary);
+    font-weight: var(--fw-bold);
+    opacity: 0.25;
+  }
 }
 
 h2 {
   font-family: var(--ff-secondary);
+}
+
+h1,
+h2 {
+  color: var(--clr-secondary);
 }
 
 h3 {
@@ -20,4 +52,15 @@ h3 {
 p {
   font-family: var(--ff-primary);
   color: var(--clr-neutral);
+  font-size: f.rem(15);
+  line-height: 1.7;
+
+  @include m.breakpoint(medium) {
+    font-size: f.rem(16);
+    line-height: 1.75;
+  }
+  @include m.breakpoint(large) {
+    font-size: f.rem(18);
+    line-height: 1.78;
+  }
 }

@@ -47,17 +47,13 @@
     margin-inline: auto;
     color: var(--clr-neutral);
     font-family: var(--ff-primary);
-    font-size: f.rem(15);
-    line-height: 1.8;
 
     @include m.breakpoint(medium) {
       max-width: 52ch;
-      font-size: f.rem(16);
     }
     @include m.breakpoint(large) {
       max-width: 48ch;
       margin-inline: 0;
-      font-size: f.rem(18);
     }
   }
 
