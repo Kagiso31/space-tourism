@@ -118,7 +118,7 @@ $img-height-md: f.rem(310);
     @include m.breakpoint(large) {
       gap: f.rem(32);
       grid-auto-flow: row;
-      top: f.rem(100);
+      top: f.rem(52);
       width: auto;
       margin-left: f.rem(100);
     }
@@ -131,7 +131,7 @@ $img-height-md: f.rem(310);
     width: f.rem(40);
     height: f.rem(40);
     margin: 0 !important;
-    border: f.rem(1) solid hsl(0, 0, 100%, 0.2);
+    border: f.rem(1) solid hsl(0, 0%, 100%, 0.2);
     background-color: transparent;
     font-family: var(--ff-secondary);
     font-size: f.rem(16);
@@ -150,7 +150,7 @@ $img-height-md: f.rem(310);
     }
 
     &:hover {
-      border: f.rem(1) solid hsl(0, 0, 100%, 1);
+      border: f.rem(1) solid hsl(0, 0%, 100%, 1);
     }
 
     &-active {

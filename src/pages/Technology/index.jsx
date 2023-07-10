@@ -39,7 +39,7 @@ const Technology = () => {
               <div className="technology__img">
                 <picture>
                   <source
-                    media="(min-width:68.75em)"
+                    media="(min-width:64em)"
                     srcSet={launchVehicle_portrait}
                   />
                   <img src={launchVehicle_landscape} alt="Launch Vehicle" />
@@ -67,7 +67,7 @@ const Technology = () => {
               <div className="technology__img">
                 <picture>
                   <source
-                    media="(min-width:68.75em)"
+                    media="(min-width:64em)"
                     srcSet={spacePort_portrait}
                   />
                   <img src={spacePort_landscape} alt="Space Port" />
@@ -95,7 +95,7 @@ const Technology = () => {
               <div className="technology__img">
                 <picture>
                   <source
-                    media="(min-width:68.75em)"
+                    media="(min-width:64em)"
                     srcSet={spaceCapsule_portrait}
                   />
                   <img src={spaceCapsule_landscape} alt="Space Capsule" />

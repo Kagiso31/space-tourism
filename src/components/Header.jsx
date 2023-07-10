@@ -19,7 +19,7 @@ const Header = () => {
           <img src={logo} alt="Logo" />
           <button
             className="mobile-nav-toggle"
-            aria-expanded="false"
+            aria-expanded={expanded}
             aria-controls="navigation"
             onClick={(e) => handleClick(e, expanded)}
           >

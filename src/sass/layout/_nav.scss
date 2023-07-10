@@ -1,6 +1,13 @@
 @use "../abstracts/functions" as f;
 @use "../abstracts/mixins" as m;
 
+html {
+  // if mobile menu is open and window width is increased, scroll is enabled
+  @include m.breakpoint(medium) {
+    overflow-y: auto !important;
+  }
+}
+
 // padding between bottom of nav link and edge of nav container for underline
 $padding-bottom: f.rem(40);
 
@@ -30,6 +37,10 @@ $padding-bottom: f.rem(40);
     &[data-visible="true"] {
       left: 33%;
       opacity: 1;
+
+      @include m.breakpoint(xsmall) {
+        left: 0;
+      }
     }
   }
 
