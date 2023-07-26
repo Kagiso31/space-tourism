@@ -177,6 +177,20 @@ p {
   }
 }
 
+.attribution {
+  margin-top: 2.375rem;
+}
+.attribution p {
+  font-size: 0.59375rem;
+}
+.attribution a {
+  color: var(--clr-secondary);
+  text-decoration: none;
+}
+.attribution a:hover {
+  text-decoration: underline;
+}
+
 .primary-header {
   padding-block: 1.5rem;
 }

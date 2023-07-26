@@ -1,0 +1,17 @@
+@use "../abstracts/functions" as f;
+
+.attribution {
+  margin-top: f.rem(38);
+  p {
+    font-size: f.rem(9.5);
+  }
+
+  a {
+    color: var(--clr-secondary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

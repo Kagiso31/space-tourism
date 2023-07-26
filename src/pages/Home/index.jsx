@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   useEffect(() => {
@@ -24,7 +25,29 @@ const Home = () => {
             world experience!
           </p>
         </div>
-        <button className="home__button">Explore</button>
+        <Link to="/destination">
+          <button className="home__button">Explore</button>
+        </Link>
+      </div>
+      <div className="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+            {" "}
+            Frontend Mentor
+          </a>
+        </p>
+        <p>
+          Coded by{" "}
+          <a target="_blank" href="https://www.github.com/Kagiso31">
+            Kagiso Mokou
+          </a>
+        </p>
+        <p>
+          <a href="https://www.flaticon.com/free-icons/link" target="_blank">
+            Favicon created by nawicon - Flaticon
+          </a>
+        </p>
       </div>
     </section>
   );
