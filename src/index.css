@@ -119,7 +119,7 @@ h1:not(.home__heading) {
   h1:not(.home__heading) {
     font-size: 1.75rem;
     margin-left: 6.25rem;
-    margin-top: 4.75rem;
+    margin-top: 4.875rem;
   }
 }
 h1:not(.home__heading) span {
@@ -209,6 +209,28 @@ p {
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(2.548125rem);
   z-index: 2;
+}
+.nav::before {
+  height: 1px;
+  content: "";
+  display: none;
+  position: absolute;
+  background-color: var(--clr-secondary);
+  opacity: 0.2;
+  left: 0;
+  transform: translate(-94%, 0.75rem);
+  transition: width 900ms ease-in-out;
+}
+@media (min-width: 64em) {
+  .nav::before {
+    width: 6vw;
+    display: block;
+  }
+}
+@media (min-width: 87.5em) {
+  .nav::before {
+    width: min(26vw, 29.5625rem);
+  }
 }
 @media (min-width: 40em) {
   .nav {

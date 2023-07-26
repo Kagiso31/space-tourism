@@ -22,7 +22,7 @@ h1:not(.home__heading) {
   @include m.breakpoint(large) {
     font-size: f.rem(28);
     margin-left: f.rem(100);
-    margin-top: f.rem(76);
+    margin-top: f.rem(78);
   }
 
   span {

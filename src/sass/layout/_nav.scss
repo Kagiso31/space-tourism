@@ -17,6 +17,26 @@ $padding-bottom: f.rem(40);
   backdrop-filter: blur(f.rem(40.77));
   z-index: 2;
 
+  &::before {
+    height: 1px;
+    content: "";
+    display: none;
+    position: absolute;
+    background-color: var(--clr-secondary);
+    opacity: 0.2;
+    left: 0;
+    transform: translate(-94%, f.rem(12));
+    transition: width 900ms ease-in-out;
+
+    @include m.breakpoint(large) {
+      width: 6vw;
+      display: block;
+    }
+    @include m.breakpoint(xlarge) {
+      width: min(26vw, f.rem(473));
+    }
+  }
+
   @include m.breakpoint(medium) {
     padding-top: f.rem(40);
     padding-inline: f.rem(48);
@@ -25,7 +45,6 @@ $padding-bottom: f.rem(40);
   @include m.breakpoint(large) {
     padding-inline: clamp(f.rem(112), 10vw, f.rem(160));
   }
-
   @include m.breakpoint(small-only) {
     position: absolute;
     inset: 0;
