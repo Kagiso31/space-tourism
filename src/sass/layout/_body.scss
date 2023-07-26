@@ -5,7 +5,8 @@ body {
   background-size: cover;
   inset: 0;
 
-  &.home-page {
+  &.home-page,
+  &.not-found-page {
     background-image: url(./assets/home/background-home-mobile.jpg);
 
     @include m.breakpoint(medium) {
