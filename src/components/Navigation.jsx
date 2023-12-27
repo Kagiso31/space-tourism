@@ -17,7 +17,7 @@ const Navigation = ({ expanded }) => {
     <nav className="nav" id="navigation" data-visible={expanded}>
       <ul role="list" className="nav__list">
         <li className="nav__item">
-          <NavLink to="/space-tourism" className="nav__link">
+          <NavLink to="/space-tourism" end className="nav__link">
             Home
           </NavLink>
         </li>
