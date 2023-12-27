@@ -16,6 +16,7 @@ $padding-bottom: f.rem(40);
   background-color: rgba(255, 255, 255, 0.05);
   -webkit-backdrop-filter: blur(f.rem(40.77));
   backdrop-filter: blur(f.rem(40.77));
+  filter: blur(f.rem(40.77));
   z-index: 2;
 
   &::before {
