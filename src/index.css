@@ -709,6 +709,7 @@ body.technology-page {
 .destination__name {
   font-family: var(--ff-secondary);
   font-size: 3.5rem;
+  font-weight: 400;
   text-transform: uppercase;
 }
 @media (min-width: 40em) {
@@ -808,6 +809,7 @@ body.technology-page {
   color: var(--clr-secondary);
   font-family: var(--ff-secondary);
   font-size: 5rem;
+  font-weight: 400;
   text-transform: uppercase;
 }
 @media (min-width: 40em) {

@@ -126,6 +126,7 @@
   &__name {
     font-family: var(--ff-secondary);
     font-size: f.rem(56);
+    font-weight: 400;
     text-transform: uppercase;
 
     @include m.breakpoint(medium) {

@@ -17,6 +17,7 @@
     color: var(--clr-secondary);
     font-family: var(--ff-secondary);
     font-size: f.rem(80);
+    font-weight: 400;
     text-transform: uppercase;
 
     @include m.breakpoint(medium) {
