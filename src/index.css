@@ -221,6 +221,7 @@ p {
 .nav {
   position: relative;
   background-color: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(2.548125rem);
   backdrop-filter: blur(2.548125rem);
   z-index: 2;
 }
