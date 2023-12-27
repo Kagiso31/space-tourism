@@ -221,25 +221,7 @@ p {
 .nav {
   position: relative;
   z-index: 2;
-}
-.nav::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  /* slightly transparent fallback for browsers not supporting backdrop-filter */
-}
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .nav::after {
-    -webkit-backdrop-filter: blur(40.77px);
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(40.77px);
-  }
-}
-@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-  .nav::after {
-    background-color: rgba(11, 13, 23, 0.9);
-  }
+  background-color: rgba(30, 32, 41, 0.93);
 }
 .nav::before {
   height: 1px;
